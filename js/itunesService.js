@@ -27,11 +27,11 @@ angular.module('itunes').service('itunesService', function($http, $q){
           Play: filterArtistData[i].previewUrl,
           Type: filterArtistData[i].kind
         }
-
+        // Push data to responseData array.
         responseData.push(obj);
       }
       console.log(response);
-
+      // responseData is passed along to the promise.
       defer.resolve(responseData);
     })
     return defer.promise;

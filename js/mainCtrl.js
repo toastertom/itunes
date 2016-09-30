@@ -29,7 +29,7 @@ angular.module('itunes').controller('mainCtrl', function($scope, itunesService){
 
   $scope.getSongData = function (artist) {
     itunesService.getArtist(artist).then(function (response) {
-       $scope.gridOptions = response;
+       $scope.songData = response;
     })
   }
 
