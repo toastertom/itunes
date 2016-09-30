@@ -10,7 +10,7 @@ angular.module('itunes').service('itunesService', function($http, $q){
   this.getArtist = function (artist) {
     var defer = $q.defer();
      $http({
-      method: 'GET';
+      method: 'GET',
       url: 'https://itunes.apple.com/search?term=' + artist + '&callback=JSON_CALLBACK'
     }).then(function (response) {
       defer.resolve(response);
