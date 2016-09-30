@@ -22,10 +22,10 @@ angular.module('itunes').service('itunesService', function($http, $q){
         var obj = {
           Artist: filterArtistData[i].artistName,
           AlbumArt: filterArtistData[i].artworkUrl30,
-          Collection: filterArtistData[i].collectionName
-
-
-
+          Collection: filterArtistData[i].collectionName,
+          CollectionPrice: filterArtistData[i].collectionPrice,
+          Play: filterArtistData[i].previewUrl,
+          Type: filterArtistData[i].kind
         }
 
         responseData.push(obj);
