@@ -13,8 +13,26 @@ angular.module('itunes').service('itunesService', function($http, $q){
       method: 'JSONP',
       url: 'https://itunes.apple.com/search?term=' + artist + '&callback=JSON_CALLBACK'
     }).then(function (response) {
+
+      var filterArtistData = response.data.results;
+      var responseData = [];
+      // Need to iterate through the data we get back form the API.
+      for(var i = 0; i < filterArtistData.length; i++){
+      // Then we need to conform the data to fit the ng-gird by creating a new object & pushing it to the new array above "responseData"
+        var obj = {
+          Artist: filterArtistData[i].artistName,
+          AlbumArt: filterArtistData[i].artworkUrl30,
+          Collection: filterArtistData[i].collectionName
+
+
+
+        }
+
+        responseData.push(obj);
+      }
       console.log(response);
-      defer.resolve(response);
+
+      defer.resolve(responseData);
     })
     return defer.promise;
   }
