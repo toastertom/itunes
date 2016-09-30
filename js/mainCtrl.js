@@ -20,9 +20,9 @@ angular.module('itunes').controller('mainCtrl', function($scope, itunesService){
 
   //First inject itunesService into your controller.
 
-  $scope.getArtist = function () {
-    itunesService.getArtist().then(function (artistData) {
-      $scope.artist = artistData;
+  $scope.getSongData = function (artist) {
+    itunesService.getArtist(artist).then(function (response) {
+      $scope.gridOptions = response;
     })
   }
 
