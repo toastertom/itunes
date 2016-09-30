@@ -21,7 +21,7 @@ angular.module('itunes').service('itunesService', function($http, $q){
       // Then we need to conform the data to fit the ng-gird by creating a new object & pushing it to the new array above "responseData"
         var obj = {
           Artist: filterArtistData[i].artistName,
-          AlbumArt: filterArtistData[i].artworkUrl30,
+          AlbumArt: filterArtistData[i].artworkUrl100,
           Collection: filterArtistData[i].collectionName,
           CollectionPrice: filterArtistData[i].collectionPrice,
           Play: filterArtistData[i].previewUrl,
